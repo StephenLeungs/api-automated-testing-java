@@ -27,6 +27,18 @@
                 </methods>
             </class>
 
+            <!--
+                包含的测试类TestUser / Included Test Class: TestLogin
+            -->
+            <class name="com.stephen.testcases.TestUser">
+                <!--
+                    该测试类里面的测试方法 / Test Methods in this Class
+                -->
+                <methods>
+                    <include name="testCheckUsername"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>

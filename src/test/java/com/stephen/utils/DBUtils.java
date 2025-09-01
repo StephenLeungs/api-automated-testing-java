@@ -43,19 +43,9 @@ public class DBUtils {
         }
     }
 
-    // 4. 获取数据库连接 (此方法无需任何修改！)
+    // 4. 获取数据库连接
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }
 
-    // 5. 测试连接 (此方法也无需修改！)
-    public static void main(String[] args) {
-        try (Connection conn = getConnection()) {
-            System.out.println("数据库连接成功！");
-            // 可以进行你的数据库操作...
-        } catch (SQLException e) {
-            System.err.println("数据库连接失败！");
-            e.printStackTrace();
-        }
-    }
 }

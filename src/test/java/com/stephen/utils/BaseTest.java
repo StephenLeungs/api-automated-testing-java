@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
  */
 public class BaseTest {
 
-    // @BeforeSuite: TestNG注解，表示在整个测试套件开始前，只执行一次。
+    // @BeforeClass: TestNG注解，表示被继承的测试类执行前，都会执行一次。
     @BeforeClass(alwaysRun = true) // `alwaysRun = true` 表示即使这个类被继承，也保证会运行
     public void globalSetup() {
         // 1. 从配置文件中加载并设置基准URL

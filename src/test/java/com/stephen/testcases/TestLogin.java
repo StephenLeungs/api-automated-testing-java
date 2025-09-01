@@ -4,10 +4,13 @@ import com.stephen.api.LoginAPI;
 import com.stephen.api.RegisterAPI;
 import com.stephen.utils.BaseTest;
 import com.stephen.utils.GetTestData;
+import com.stephen.utils.TokenManager;
+import io.restassured.path.json.JsonPath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.regex.Pattern;
 
 public class TestLogin extends BaseTest {
@@ -21,7 +24,7 @@ public class TestLogin extends BaseTest {
             Assert.assertTrue(registerAPI.register(username, password, confirmPassword).
                     matches(".*" + Pattern.quote(expectedResult) + ".*"));
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             LOGGER.error("注册测试用例异常/Register Testcase Error", e);
         }
     }
@@ -30,10 +33,15 @@ public class TestLogin extends BaseTest {
     public void testLogin(String username, String password, String expectedResult) {
         try {
             LoginAPI loginAPI = new LoginAPI();
-            Assert.assertTrue(loginAPI.login(username,password).
+            String response = loginAPI.login(username, password);
+            Assert.assertTrue(response.
                     matches(".*" + Pattern.quote(expectedResult) + ".*"));
 
-        }catch (Exception e) {
+            //断言通过（登录成功）后提取响应文本内的data的值（当前用户的token），并调用Token管理工具类的添加token的方法添加到存放token的HashMap中
+            String token = JsonPath.from(response).getString("data");
+            TokenManager.addTokenToMap(username, token);
+
+        } catch (Exception e) {
             LOGGER.error("登录测试用例异常/Login Testcase Error", e);
         }
     }
