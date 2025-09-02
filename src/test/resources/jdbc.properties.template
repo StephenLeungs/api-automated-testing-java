@@ -1,0 +1,23 @@
+# ==============================================
+# Database Connection Configuration Template
+# ==============================================
+# Copy this file to 'jdbc.properties' and fill in your actual database credentials
+# DO NOT commit 'jdbc.properties' with real credentials to version control!
+
+# JDBC driver class
+jdbc.driver=com.mysql.cj.jdbc.Driver
+
+# Database connection URL
+# Replace {your_database_host}, {your_database_port} and {your_database_name} with your actual values
+jdbc.url=jdbc:mysql://{your_database_host}:{your_database_port}/{your_database_name}?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+
+# Database username
+jdbc.username={your_database_username}
+
+# Database password
+jdbc.password={your_database_password}
+
+# Connection pool settings (optional)
+# jdbc.pool.initialSize=5
+# jdbc.pool.maxActive=20
+# jdbc.pool.maxWait=30000

@@ -7,12 +7,25 @@ import org.slf4j.LoggerFactory;
 import static io.restassured.RestAssured.given;
 
 
-//API类均需要继承测试基类加载config配置里面的api.base.url
+/**
+ * 注册接口类
+ */
 public class RegisterAPI {
 
     //日志器 / Logger
     public static final Logger LOGGER = LoggerFactory.getLogger("RegisterAPI.class");
 
+    /**
+     * 注册请求
+     * <p>
+     * 调用RestAssured相关方法，封装注册接口的请求
+     * </p>
+     *
+     * @param username        账号
+     * @param password        密码
+     * @param confirmPassword 确认密码
+     * @return 注册接口的响应文本
+     */
     public String register(String username, String password, String confirmPassword) {
         String registerResult = null;
 

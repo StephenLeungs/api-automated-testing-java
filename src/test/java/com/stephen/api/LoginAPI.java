@@ -5,11 +5,24 @@ import org.slf4j.LoggerFactory;
 
 import static io.restassured.RestAssured.given;
 
+/**
+ * 登录接口类
+ */
 public class LoginAPI {
 
     //日志器 / Logger
     public static final Logger LOGGER = LoggerFactory.getLogger("LoginAPI.class");
 
+    /**
+     * 登录请求
+     * <p>
+     * 调用RestAssured相关方法，封装登录接口的请求
+     * </p>
+     *
+     * @param username 账号
+     * @param password 密码
+     * @return 登录接口的响应文本
+     */
     public String login(String username, String password) {
 
         String loginResult = null;

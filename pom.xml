@@ -35,7 +35,7 @@
 
     <!-- 项目依赖 / Project Dependencies -->
     <dependencies>
-        <!-- 测试框架 / Testing Framework -->
+        <!-- 单元测试框架 / Testing Framework -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -51,6 +51,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- MySQL连接 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

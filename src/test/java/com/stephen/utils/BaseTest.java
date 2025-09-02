@@ -10,7 +10,16 @@ import org.testng.annotations.BeforeClass;
  */
 public class BaseTest {
 
-    // @BeforeClass: TestNG注解，表示被继承的测试类执行前，都会执行一次。
+    // @BeforeClass: 通过此TestNG注解，被继承的测试类执行前，都会执行一次。
+
+    /**
+     * 全局配置设置
+     * <p>
+     * 调用ConfigLoader类中的getBaseUrl()方法，获取并设置RestAssured的基准路径。
+     *
+     * @BeforeClass: 通过此TestNG注解，被继承的测试类执行前，都会执行一次。
+     * </p>
+     */
     @BeforeClass(alwaysRun = true) // `alwaysRun = true` 表示即使这个类被继承，也保证会运行
     public void globalSetup() {
         // 1. 从配置文件中加载并设置基准URL

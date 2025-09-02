@@ -7,6 +7,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * 数据库工具类
+ * <p>
+ * 读取jdbc.properties配置文件，获取账号密码等数据库连接信息并提供获取数据库连接的工具方法
+ * </p>
+ */
 public class DBUtils {
     private static String driver;
     private static String url;
@@ -43,7 +49,16 @@ public class DBUtils {
         }
     }
 
-    // 4. 获取数据库连接
+
+    /**
+     * 获取数据库连接
+     * <p>
+     * 获取数据库连接的工具方法，调用java.sql.DriverManager模块的getConnection()方法获取数据库连接
+     * </p>
+     *
+     * @return Connection实例
+     * @throws SQLException 数据库相关异常
+     */
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }

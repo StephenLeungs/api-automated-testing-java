@@ -4,6 +4,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
+
 import java.io.File;
 
 /**
@@ -27,7 +28,7 @@ public class GetTestData {
      * </p>
      *
      * @param excelPath Excel文件路径 / Excel file path
-     * @param sheet Excel文件内需要读取的sheet的名称 / Sheet name to read
+     * @param sheet     Excel文件内需要读取的sheet的名称 / Sheet name to read
      * @return 提供给DataProvider的存放测试数据的Object二维数组 / two-dimensional Object array containing test data for DataProvider
      */
     public static Object[][] getDataFromExcel(String excelPath, String sheet) {
@@ -83,8 +84,8 @@ public class GetTestData {
      * @return 注册接口的测试数据 / Register test data
      */
     @DataProvider(name = "RegisterData")
-    public static  Object[][] getRegisterData(){
-        return getDataFromExcel("src/test/resources/TestData.xlsx",  "RegisterData");
+    public static Object[][] getRegisterData() {
+        return getDataFromExcel("src/test/resources/TestData.xlsx", "RegisterData");
     }
 
     /**
@@ -98,8 +99,8 @@ public class GetTestData {
      * @return 登录接口的测试数据 / Login test data
      */
     @DataProvider(name = "LoginData")
-    public static  Object[][] getLoginData(){
-        return getDataFromExcel("src/test/resources/TestData.xlsx",  "LoginData");
+    public static Object[][] getLoginData() {
+        return getDataFromExcel("src/test/resources/TestData.xlsx", "LoginData");
     }
 
     /**
@@ -113,7 +114,7 @@ public class GetTestData {
      * @return 查询当前账号接口的测试数据 / check username test data
      */
     @DataProvider(name = "CheckUsernameData")
-    public static  Object[][] getCheckUsernameData(){
-        return getDataFromExcel("src/test/resources/TestData.xlsx",  "CheckUsernameData");
+    public static Object[][] getCheckUsernameData() {
+        return getDataFromExcel("src/test/resources/TestData.xlsx", "CheckUsernameData");
     }
 }
