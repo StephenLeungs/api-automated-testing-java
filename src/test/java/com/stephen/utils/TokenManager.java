@@ -42,6 +42,7 @@ public class TokenManager {
      * </p>
      *
      * @param username token所属的账号
+     * @return 该账号的token
      */
     public static String getTokenFromMap(String username) {
         return userToken.get(username);

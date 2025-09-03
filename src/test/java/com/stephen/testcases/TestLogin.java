@@ -38,7 +38,7 @@ public class TestLogin extends BaseTest {
     @Test(groups = "Login", priority = 1, dataProvider = "RegisterData", dataProviderClass = GetTestData.class)
     public void testRegister(String username, String password, String confirmPassword, String expectedResult) {
         try {
-            //调用注册接口类的register()方法发起请求，并对响应文本通过正则表达式进行断言
+            //调用注册接口类的实例方法register()发起请求，并对响应文本通过正则表达式进行断言
             RegisterAPI registerAPI = new RegisterAPI();
             Assert.assertTrue(registerAPI.register(username, password, confirmPassword).
                     matches(".*" + Pattern.quote(expectedResult) + ".*"));
@@ -62,7 +62,7 @@ public class TestLogin extends BaseTest {
     @Test(groups = "Login", priority = 2, dataProvider = "LoginData", dataProviderClass = GetTestData.class)
     public void testLogin(String username, String password, String expectedResult) {
         try {
-            //调用登录接口类的login()方法发起请求，并对响应文本通过正则表达式进行断言
+            //调用登录接口类的实例方法login()发起请求，并对响应文本通过正则表达式进行断言
             LoginAPI loginAPI = new LoginAPI();
             String response = loginAPI.login(username, password);
             Assert.assertTrue(response.

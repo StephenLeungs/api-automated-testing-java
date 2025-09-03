@@ -31,7 +31,7 @@ public class TestUser extends BaseTest {
     @Test(groups = "User", priority = 3, dataProvider = "CheckUsernameData", dataProviderClass = GetTestData.class)
     public void testCheckUsername(String username, String expectedResult) {
         try {
-            //调用查询当前账号接口类的checkUsername()方法发起请求，并对响应文本进行断言（要查询的账号 = 接口返回的账号）
+            //调用查询当前账号接口类的实例方法checkUsername()发起请求，并对响应文本进行断言（要查询的账号 = 接口返回的账号）
             CheckUsernameAPI checkUsernameAPI = new CheckUsernameAPI();
             Assert.assertEquals(checkUsernameAPI.checkUsername(username), expectedResult);
 
