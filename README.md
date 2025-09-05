@@ -314,6 +314,23 @@ public class TokenManager {
 }
 ```
 
+> **注意**：如果需要调用DBUtils工具类连接数据库，需要在src/test/resources目录下的数据库连接信息模板文件jdbc.properties.template里填入自己的数据库连接信息，并把文件重命名为jdbc.properties
+
+```properties
+# JDBC driver class
+jdbc.driver=com.mysql.cj.jdbc.Driver
+
+# Database connection URL
+# Replace {your_database_host}, {your_database_port} and {your_database_name} with your actual values
+jdbc.url=jdbc:mysql://{your_database_host}:{your_database_port}/{your_database_name}?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+
+# Database username
+jdbc.username={your_database_username}
+
+# Database password
+jdbc.password={your_database_password}
+```
+
 #### **testcases包**（业务层）
 
 调用api包里构造的请求，使用TestNG DataProvider参数化测试：
